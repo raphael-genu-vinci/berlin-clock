@@ -42,4 +42,24 @@ describe('Berlin Clock', () => {
         });
     });
 
+    describe('convertMinutesBlock1', () => {
+        it('should correctly convert minutes into one-minute blocks', () => {
+            const clock = new BerlinClock();
+            expect(clock.convertMinutesBlock1(0)).toBe(0);
+            expect(clock.convertMinutesBlock1(1)).toBe(1);
+            expect(clock.convertMinutesBlock1(2)).toBe(2);
+            expect(clock.convertMinutesBlock1(3)).toBe(3);
+            expect(clock.convertMinutesBlock1(4)).toBe(4);
+            expect(clock.convertMinutesBlock1(5)).toBe(0);
+        });
+
+        it('should handle minutes above 5', () => {
+            const clock = new BerlinClock();
+            expect(clock.convertMinutesBlock1(6)).toBe(1);
+            expect(clock.convertMinutesBlock1(7)).toBe(2);
+            expect(clock.convertMinutesBlock1(8)).toBe(3);
+            expect(clock.convertMinutesBlock1(9)).toBe(4);
+            expect(clock.convertMinutesBlock1(10)).toBe(0);
+        });
+    });
 });
