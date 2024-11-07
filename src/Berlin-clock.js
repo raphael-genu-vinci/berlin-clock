@@ -1,4 +1,13 @@
 class BerlinClock {
+
+    constructor(){
+        this.MINUTES_BOTTOM_ROW = 4;
+        this.MINUTES_TOP_ROW = 11;
+        this.HOURS_BOTTOM_ROW = 4;
+        this.HOURS_TOP_ROW = 4;
+        this.isSecondEven = true;
+    }
+
     convertTimestamp(){
         const timeStamp = Date.now();
         const date = new Date(timeStamp);
