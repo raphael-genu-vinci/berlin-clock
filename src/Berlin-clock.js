@@ -21,13 +21,11 @@ class BerlinClock {
     }
 
     convertMinutesBlock5(minutes){
-        const blockMinutes = minutes % 5;
-        return blockMinutes;
+        return Math.floor(minutes / 5);
     }
 
     convertMinutesBlock1(minutes){
-        const singleMinutes = minutes - this.convertMinutesBlock5;
-        return singleMinutes;
+        return minutes % 5;
     }
 
 }
