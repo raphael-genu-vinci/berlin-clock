@@ -1,5 +1,5 @@
 
-class BerlinClock {
+export class BerlinClock {
 
     /**
      * Initializes a new instance of the BerlinClock class, setting default values
@@ -51,4 +51,3 @@ class BerlinClock {
     }
 
 }
-module.exports = BerlinClock;
