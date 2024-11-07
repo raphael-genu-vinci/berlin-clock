@@ -10,5 +10,16 @@ class BerlinClock {
             timeStamp : timeStamp
         };
     }
+
+    convertMinutesBlock5(minutes){
+        const blockMinutes = minutes % 5;
+        return blockMinutes;
+    }
+
+    convertMinutesBlock1(minutes){
+        const singleMinutes = minutes - this.convertMinutesBlock5;
+        return singleMinutes;
+    }
+
 }
 module.exports = BerlinClock;
