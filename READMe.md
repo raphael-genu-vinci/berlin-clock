@@ -23,12 +23,13 @@ The Berlin Clock (Mengenlehreuhr) is a unique way to display time using illumina
 
 1. Clone the repository:
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/raphael-genu-vinci/berlin-clock.git
 cd berlin-clock
 ```
 
 2. Run the automatic setup script:
 ```bash
+cd BerlinClock
 node setup.js
 ```
 
