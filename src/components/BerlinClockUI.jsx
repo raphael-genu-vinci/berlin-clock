@@ -1,5 +1,4 @@
 import React, {useState, useEffect } from 'react';
-import loading from '../assets/loading.svg';
 import { Clock } from 'lucide-react';
 
 import { BerlinClock } from './Berlin-clock';
@@ -7,10 +6,12 @@ import { BerlinClock } from './Berlin-clock';
 const BerlinClockUI = () => {
   const [time, setTime] = useState(null);
   const clock = new BerlinClock();
+  const [digitalTime, setDigitalTime] = useState(null);
 
   useEffect(() => {
     const updateTime = () => {
       const currentTime = clock.convertAll();
+      setDigitalTime(clock.convertTimestamp);
       setTime(currentTime)
     };
 
@@ -90,7 +91,7 @@ const BerlinClockUI = () => {
     );
   }
   
-  if (!time) return <img src="loadingIcon" alt="loading" />;
+  if (!time) return <img src="../assets/loading.svg" alt="loading" />;
 
   return (
     <div className='max-w-4xl mx-auto p-8 bg-white rounded-xl shadow-lg'>
@@ -99,9 +100,12 @@ const BerlinClockUI = () => {
           <h1 className='text-2xl font-bold text-gray-800'>Berlin Clock</h1>
         </div>
 
-        {renderSeconds(time.seconds)}
+        {renderSeconds(time.toggleLight)}
         {renderHourBlock(time.hoursBlock5, time.hoursBlock1)}
-        {renderMinutesBlock(time.minutesBlock5, time.minuteBlock1)}
+        {renderMinutesBlock(time.minutesBlock5, time.minutesBlock1)}
+        <div className="mt-6 text-center text-xl font-mono">
+          {digitalTime.hours} : {digitalTime.minutes} : {digitalTime.seconds}
+        </div>
     </div>
   );
 };
