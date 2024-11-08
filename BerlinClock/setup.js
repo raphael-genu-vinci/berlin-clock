@@ -63,15 +63,6 @@ function checkNode() {
 }
 
 
-/*************  ✨ Codeium Command ⭐  *************/
-/**
- * Sets up the project by checking if Node.js and npm are installed, installing
- * dependencies using npm, and starting the development server.
- *
- * @throws {Error} If Node.js or npm is not installed, or if there is an error
- * during setup.
- */
-/******  4de6feac-1ee7-4660-888e-b5f5bb78c8f0  *******/
 async function setup() {
   console.log('🚀 Starting project setup...');
 
