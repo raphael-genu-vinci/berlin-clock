@@ -1,4 +1,4 @@
-const BerlinClock = require('../src/components/Berlin-clock.js');
+import { BerlinClock } from '../src/components/Berlin-clock.js';
 
 describe('Berlin Clock', () => {
     describe('convertTimestamp', () => {
