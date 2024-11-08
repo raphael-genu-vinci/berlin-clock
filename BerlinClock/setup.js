@@ -63,6 +63,13 @@ function checkNode() {
 }
 
 
+/**
+ * Sets up the project by checking for Node.js and npm, installing dependencies, and
+ * starting the development server.
+ *
+ * @returns {Promise<void>} A Promise that resolves if the setup is successful, or
+ *     rejects if there is an error.
+ */
 async function setup() {
   console.log('🚀 Starting project setup...');
 
@@ -94,7 +101,6 @@ async function setup() {
   }
 }
 
-// Run setup
 setup().catch(error => {
   console.error('❌ Setup failed:', error);
   process.exit(1);
