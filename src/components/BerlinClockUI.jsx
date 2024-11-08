@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react';
-import { ReactComponent as Loading} from "../assets/loading.svg"
+import loading from '../assets/loading.svg';
 import { Clock } from 'lucide-react';
 
 import { BerlinClock } from './Berlin-clock';
@@ -9,12 +9,13 @@ const BerlinClockUI = () => {
   const clock = new BerlinClock();
 
   useEffect(() => {
-    const uptadeTime = () => {
-      setTime(clock.convertAll())
+    const updateTime = () => {
+      const currentTime = clock.convertAll();
+      setTime(currentTime)
     };
 
-    uptadeTime()
-    const interval = setInterval(uptadeTime, 1000);
+    updateTime()
+    const interval = setInterval(updateTime, 1000);
 
     return () => clearInterval(interval);
   }, []);
@@ -89,7 +90,7 @@ const BerlinClockUI = () => {
     );
   }
   
-  if (!time) return <Loading className="w-full" />;
+  if (!time) return <img src="loadingIcon" alt="loading" />;
 
   return (
     <div className='max-w-4xl mx-auto p-8 bg-white rounded-xl shadow-lg'>
@@ -100,13 +101,7 @@ const BerlinClockUI = () => {
 
         {renderSeconds(time.seconds)}
         {renderHourBlock(time.hoursBlock5, time.hoursBlock1)}
-        {renderMinutesBlock(time.minutesBlock5, minuteBlock1)}
-
-        <div className='mt-6 text-center text-xl font-mono'>
-          {String(time.hours).padStart(2, '0')}:
-          {String(time.minutes).padStart(2, '0')}:
-          {String(time.seconds).padStart(2, '0')}
-        </div>
+        {renderMinutesBlock(time.minutesBlock5, time.minuteBlock1)}
     </div>
   );
 };
