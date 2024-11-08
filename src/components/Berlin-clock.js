@@ -65,20 +65,28 @@ export class BerlinClock {
      * @returns {Number} The number of one-hour blocks.
      */
     convertHoursBlock1(hours){
-        return Math.floor(hours / 5);
+        return hours % 5;
     }
 
     
-/*************  ✨ Codeium Command ⭐  *************/
     /**
      * Determines whether the bottom-most yellow light should be turned on or off 
      * based on the current second value.
      * @param {Number} seconds The seconds value to determine from.
      * @returns {Boolean} true if the light should be turned on, false otherwise.
      */
-/******  2f428ebd-ba1f-457c-9c0d-1ed3f6956f8d  *******/
     toggleSecondLight(seconds){
         return seconds % 2 === 0;
     }
 
+    convertAll(){
+        const time = this.convertTimestamp();
+        return {
+            toggleLight : this.toggleSecondLight(time.seconds),
+            hoursBlock5 : this.convertHoursBlock5(14),
+            hoursBlock1 : this.convertHoursBlock1(14),
+            minutesBlock5 : this.convertHoursBlock5(time.minutes),
+            minutesBlock1 : this.convertMinutesBlock1(time.minutes)
+        }
+    }
 }
