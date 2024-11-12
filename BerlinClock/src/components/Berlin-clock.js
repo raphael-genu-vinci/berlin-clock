@@ -85,7 +85,7 @@ export class BerlinClock {
             toggleLight : this.toggleSecondLight(time.seconds),
             hoursBlock5 : this.convertHoursBlock5(time.hours),
             hoursBlock1 : this.convertHoursBlock1(time.hours),
-            minutesBlock5 : this.convertHoursBlock5(time.minutes),
+            minutesBlock5 : this.convertMinutesBlock5(time.minutes),
             minutesBlock1 : this.convertMinutesBlock1(time.minutes)
         }
     }
