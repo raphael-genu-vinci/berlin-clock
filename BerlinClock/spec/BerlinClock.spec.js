@@ -62,4 +62,23 @@ describe('Berlin Clock', () => {
             expect(clock.convertMinutesBlock1(10)).toBe(0);
         });
     });
+
+    describe('toggleSecondLight' , () => {
+        it('should correctly return a boolean showing if it is a even number', () => {
+            const clock = new BerlinClock();
+            expect(clock.toggleSecondLight(0)).toBeTrue();
+            expect(clock.toggleSecondLight(1)).toBeFalse();
+            expect(clock.toggleSecondLight(2)).toBeTrue();
+            expect(clock.toggleSecondLight(3)).toBeFalse();
+            expect(clock.toggleSecondLight(4)).toBeTrue();
+        });
+
+        it('should handle edge cases', () => {
+            const clock = new BerlinClock();
+            expect(clock.toggleSecondLight(-7)).toBeFalse();
+            expect(clock.toggleSecondLight(62)).toBeTrue();
+            expect(clock.toggleSecondLight(4)).toBeTrue();
+        });
+    });
+
 });
