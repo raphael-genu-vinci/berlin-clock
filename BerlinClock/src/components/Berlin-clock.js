@@ -46,11 +46,11 @@ export class BerlinClock {
      * @param {Number} time The time value to convert.
      * @returns {Number} The number of one-(minutes or hours) blocks.
      */
-    convertInBlock1(hours){
-        return hours % 5;
+    convertInBlock1(time){
+        return time % 5;
     }
     
-    
+
     /**
      * Determines whether the bottom-most yellow light should be turned on or off 
      * based on the current second value.
