@@ -1,5 +1,9 @@
 # Berlin Clock Project 🕒
+
 ## VERY IMPORTANT ANNOTATION
+
+Comme discuté avec Mr. Plumat (par mail et en face à face), nous avions déja fini le projet avant de devoir introduire la notion de "pair-programming" avec des commits partagé.
+En effet, nous avons développé le projet l'un à coté de l'autre ainsi qu'en appel mais suite à un problème de compte github, Sacha a dû push avec le compte (NaxoCrn).
 
 ## Overview
 
