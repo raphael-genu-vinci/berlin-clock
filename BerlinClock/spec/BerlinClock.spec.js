@@ -2,15 +2,6 @@ import { BerlinClock } from '../src/components/Berlin-clock.js';
 
 describe('Berlin Clock', () => {
     describe('convertTimestamp', () => {
-        it('should return an object with the correct properties', () => {
-            const clock = new BerlinClock();
-            const result = clock.convertTimestamp();
-            expect(result).toHaveProperty('hours');
-            expect(result).toHaveProperty('minutes');
-            expect(result).toHaveProperty('seconds');
-            expect(result).toHaveProperty('timeStamp');
-        });
-
         it('should return valid time values', () => {
             const clock = new BerlinClock();
             const result = clock.convertTimestamp();

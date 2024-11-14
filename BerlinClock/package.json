@@ -10,8 +10,6 @@
     "dev": "vite",
     "setup": "node setup.js",
     "start": "node ./src/components/Berlin-clock.js",
-    "build": "vite build",
-    "preview": "vite preview",
     "test": "node --experimental-vm-modules node_modules/jasmine/bin/jasmine.js",
     "test:watch": "nodemon --exec 'node --experimental-vm-modules node_modules/jasmine/bin/jasmine.js'"
   },
