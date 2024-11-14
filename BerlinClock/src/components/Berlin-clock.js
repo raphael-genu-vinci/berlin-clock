@@ -33,41 +33,23 @@ export class BerlinClock {
     }
 
     /**
-     * Converts the minutes into the number of five-minute blocks.
-     * @param {Number} minutes The minutes value to convert.
-     * @returns {Number} The number of five-minute blocks.
+     * Converts the time into the number of five-(minutes or hours)blocks.
+     * @param {Number} time The (minutes or hours) value to convert.
+     * @returns {Number} The number of five-(minutes or hours) blocks.
      */
-    convertMinutesBlock5(minutes){
-        return Math.floor(minutes / 5);
+    convertInBlock5(time){
+        return Math.floor(time / 5);
     }
 
     /**
-     * Converts the minutes into the number of one-minute blocks.
-     * @param {Number} minutes The minutes value to convert.
-     * @returns {Number} The number of one-minute blocks.
+     * Converts the time (minutes or hours) into the number of one-(minutes or hours) blocks.
+     * @param {Number} time The time value to convert.
+     * @returns {Number} The number of one-(minutes or hours) blocks.
      */
-    convertMinutesBlock1(minutes){
-        return minutes % 5;
-    }
-
-    /**
-     * Converts the hours into the number of five-hour blocks.
-     * @param {Number} hours The hours value to convert.
-     * @returns {Number} The number of five-hour blocks.
-     */
-    convertHoursBlock5(hours){
-        return Math.floor(hours / 5);
-    }
-
-    /**
-     * Converts the hours into the number of one-hour blocks.
-     * @param {Number} hours The hours value to convert.
-     * @returns {Number} The number of one-hour blocks.
-     */
-    convertHoursBlock1(hours){
+    convertInBlock1(hours){
         return hours % 5;
     }
-
+    
     
     /**
      * Determines whether the bottom-most yellow light should be turned on or off 
@@ -83,10 +65,10 @@ export class BerlinClock {
         const time = this.convertTimestamp();
         return {
             toggleLight : this.toggleSecondLight(time.seconds),
-            hoursBlock5 : this.convertHoursBlock5(time.hours),
-            hoursBlock1 : this.convertHoursBlock1(time.hours),
-            minutesBlock5 : this.convertMinutesBlock5(time.minutes),
-            minutesBlock1 : this.convertMinutesBlock1(time.minutes)
+            hoursBlock5 : this.convertInBlock5(time.hours),
+            hoursBlock1 : this.convertInBlock1(time.hours),
+            minutesBlock5 : this.convertInBlock5(time.minutes),
+            minutesBlock1 : this.convertInBlock1(time.minutes)
         }
     }
 }

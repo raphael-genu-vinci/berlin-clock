@@ -27,39 +27,39 @@ describe('Berlin Clock', () => {
     describe('convertMinutesBlock5', () => {
         it('should correctly convert minutes into five-minute blocks', () => {
             const clock = new BerlinClock();
-            expect(clock.convertMinutesBlock5(0)).toBe(0);
-            expect(clock.convertMinutesBlock5(5)).toBe(1);
-            expect(clock.convertMinutesBlock5(10)).toBe(2);
-            expect(clock.convertMinutesBlock5(25)).toBe(5);
-            expect(clock.convertMinutesBlock5(59)).toBe(11);
+            expect(clock.convertInBlock5(0)).toBe(0);
+            expect(clock.convertInBlock5(5)).toBe(1);
+            expect(clock.convertInBlock5(10)).toBe(2);
+            expect(clock.convertInBlock5(25)).toBe(5);
+            expect(clock.convertInBlock5(59)).toBe(11);
         });
 
         it('should handle edge cases', () => {
             const clock = new BerlinClock();
-            expect(clock.convertMinutesBlock5(-5)).toBe(-1);
-            expect(clock.convertMinutesBlock5(60)).toBe(12);
-            expect(clock.convertMinutesBlock5(4)).toBe(0);
+            expect(clock.convertInBlock5(-5)).toBe(-1);
+            expect(clock.convertInBlock5(60)).toBe(12);
+            expect(clock.convertInBlock5(4)).toBe(0);
         });
     });
 
     describe('convertMinutesBlock1', () => {
         it('should correctly convert minutes into one-minute blocks', () => {
             const clock = new BerlinClock();
-            expect(clock.convertMinutesBlock1(0)).toBe(0);
-            expect(clock.convertMinutesBlock1(1)).toBe(1);
-            expect(clock.convertMinutesBlock1(2)).toBe(2);
-            expect(clock.convertMinutesBlock1(3)).toBe(3);
-            expect(clock.convertMinutesBlock1(4)).toBe(4);
-            expect(clock.convertMinutesBlock1(5)).toBe(0);
+            expect(clock.convertInBlock1(0)).toBe(0);
+            expect(clock.convertInBlock1(1)).toBe(1);
+            expect(clock.convertInBlock1(2)).toBe(2);
+            expect(clock.convertInBlock1(3)).toBe(3);
+            expect(clock.convertInBlock1(4)).toBe(4);
+            expect(clock.convertInBlock1(5)).toBe(0);
         });
 
         it('should handle minutes above 5', () => {
             const clock = new BerlinClock();
-            expect(clock.convertMinutesBlock1(6)).toBe(1);
-            expect(clock.convertMinutesBlock1(7)).toBe(2);
-            expect(clock.convertMinutesBlock1(8)).toBe(3);
-            expect(clock.convertMinutesBlock1(9)).toBe(4);
-            expect(clock.convertMinutesBlock1(10)).toBe(0);
+            expect(clock.convertInBlock1(6)).toBe(1);
+            expect(clock.convertInBlock1(7)).toBe(2);
+            expect(clock.convertInBlock1(8)).toBe(3);
+            expect(clock.convertInBlock1(9)).toBe(4);
+            expect(clock.convertInBlock1(10)).toBe(0);
         });
     });
 
